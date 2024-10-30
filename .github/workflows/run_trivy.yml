@@ -39,7 +39,6 @@ jobs:
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
-          security-checks: 'vuln'
           severity: 'CRITICAL,HIGH'
           timeout: '30m'
           cache-dir: .trivy
