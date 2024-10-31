@@ -8,7 +8,7 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 from apimanager.settings import API_DATE_FORMAT_WITH_DAY, API_FIELD_TIME_FORMAT
-from bootstrap_datepicker_plus import DatePickerInput, DateTimePickerInput
+from bootstrap_datepicker_plus.widgets import DatePickerInput, DateTimePickerInput
 from datetime import datetime, timedelta
 from obp.api import APIError
 
