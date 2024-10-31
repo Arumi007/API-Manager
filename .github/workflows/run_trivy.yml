@@ -2,9 +2,8 @@ name: scan container image
 
 on:
   workflow_run:
-    workflows: [build and publish container]
-    types:
-      - completed
+    workflows: [build and publish container develop branch, build and publish container non develop branches]
+    types: [completed]
 env:
   ## Sets environment variable
   DOCKER_HUB_ORGANIZATION: ${{ vars.DOCKER_HUB_ORGANIZATION }}
@@ -40,7 +39,6 @@ jobs:
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
-          security-checks: 'vuln'
           severity: 'CRITICAL,HIGH'
           timeout: '30m'
           cache-dir: .trivy
