@@ -3,16 +3,16 @@
 URLs for config app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from .views import IndexView, webui_save, webui_delete
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         IndexView.as_view(),
         name='webui-index'),
-    url(r'save/method', webui_save,
+    re_path(r'save/method', webui_save,
         name='methodrouting-save'),
-    url(r'delete/method', webui_delete,
+    re_path(r'delete/method', webui_delete,
         name='methodrouting-delete')
 ]

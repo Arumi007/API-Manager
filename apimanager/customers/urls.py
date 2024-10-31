@@ -3,11 +3,11 @@
 URLs for customers app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 from .views import CreateView
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         CreateView.as_view(),
         name='customers-create'),
 ]

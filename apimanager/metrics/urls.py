@@ -3,7 +3,7 @@
 URLs for metrics app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from .views import (
     APIMetricsView,
@@ -20,37 +20,37 @@ from .views import (
 )
 
 urlpatterns = [
-    url(r'^api/$',
+    re_path(r'^api/$',
         APIMetricsView.as_view(),
         name='api-metrics'),
-    url(r'^api/last-endpoint/$',
+    re_path(r'^api/last-endpoint/$',
         get_metric_last_endpoint,
         name='api-metrics-last-endpoint'),
-    url(r'^api/summary-partial-function$',
+    re_path(r'^api/summary-partial-function$',
         APISummaryPartialFunctionView.as_view(),
         name='api-metrics-summary-partial-function'),
-    url(r'^connector/$',
+    re_path(r'^connector/$',
         ConnectorMetricsView.as_view(),
         name='connector-metrics'),
-    url(r'^monthly-summary/$',
+    re_path(r'^monthly-summary/$',
         MonthlyMetricsSummaryView.as_view(),
         name='metrics-summary'),
-    url(r'^yearly-summary/$',
+    re_path(r'^yearly-summary/$',
         YearlySummaryView.as_view(),
         name='yearly-summary'),
-    url(r'^quarterly-summary/$',
+    re_path(r'^quarterly-summary/$',
         QuarterlySummaryView.as_view(),
         name='quarterly-summary'),
-    url(r'^weekly-summary/$',
+    re_path(r'^weekly-summary/$',
         WeeklySummaryView.as_view(),
         name='weekly-summary'),
-    url(r'^daily-summary/$',
+    re_path(r'^daily-summary/$',
         DailySummaryView.as_view(),
         name='daily-summary'),
-    url(r'^hourly-summary/$',
+    re_path(r'^hourly-summary/$',
         HourlySummaryView.as_view(),
         name='hourly-summary'),
-    url(r'^custom-summary/$',
+    re_path(r'^custom-summary/$',
         CustomSummaryView.as_view(),
         name='custom-summary'),
 ]

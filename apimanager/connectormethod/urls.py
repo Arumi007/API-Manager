@@ -3,16 +3,16 @@
 URLs for config app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from connectormethod.views import IndexView, connectormethod_save, connectormethod_update
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         IndexView.as_view(),
         name='connectormethod'),
-    url(r'save/connectormethod', connectormethod_save,
+    re_path(r'save/connectormethod', connectormethod_save,
         name='connectormethod-save'),
-    url(r'^update/connectormethod', connectormethod_update,
+    re_path(r'^update/connectormethod', connectormethod_update,
         name='connectormethod-update')
 ]

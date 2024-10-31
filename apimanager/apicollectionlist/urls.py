@@ -3,14 +3,14 @@
 URLs for Api Collection list app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 from .views import ApiCollectionListView, ExportCsvView
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         ApiCollectionListView.as_view(),
         name='apicollection-list'),
-    url(r'^export_csv$',
+    re_path(r'^export_csv$',
         ExportCsvView.as_view(),
         name='export-csv-apicollection')
 ]

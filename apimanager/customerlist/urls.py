@@ -3,14 +3,14 @@
 URLs for customer list app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 from .views import CustomerListView, ExportCsvView
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         CustomerListView.as_view(),
         name='customer-list'),
-    url(r'^export_csv$',
+    re_path(r'^export_csv$',
             ExportCsvView.as_view(),
             name='export-csv-customer')
 ]
