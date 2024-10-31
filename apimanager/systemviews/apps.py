@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class AtmsConfig(AppConfig):
-    name = 'atms'
+class SystemViewsConfig(AppConfig):
+    name = 'systemviews'
