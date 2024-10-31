@@ -29,7 +29,7 @@ urlpatterns = [
 ]
 urlpatterns += i18n_patterns(
 #urlpatterns = (
-    url(r'^$', HomeView.as_view(), name="home"),
+    re_path(r'^$', HomeView.as_view(), name="home"),
     re_path(r'^single-sign-on',
         OAuthInitiateView.as_view(), name='single-sign-on'),
     re_path(r'^logout$', LogoutView.as_view(), name='oauth-logout'),

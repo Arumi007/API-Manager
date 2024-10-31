@@ -13,7 +13,7 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView
 from obp.api import API, APIError
 from .forms import CreateAtmForm
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse, reverse_lazy
 from base.utils import exception_handle, error_once_only
