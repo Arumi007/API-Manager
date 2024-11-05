@@ -3,14 +3,14 @@
 URLs for ATM list app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 from .views import AtmListView, ExportCsvView
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         AtmListView.as_view(),
         name='atm-list'),
-    url(r'^export_csv$',
+    re_path(r'^export_csv$',
             ExportCsvView.as_view(),
             name='export-csv')
 ]

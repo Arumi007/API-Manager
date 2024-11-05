@@ -13,7 +13,7 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView
 from obp.api import API, APIError
 from .forms import CreateAccountForm
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 class IndexAccountsView(LoginRequiredMixin, FormView):
 

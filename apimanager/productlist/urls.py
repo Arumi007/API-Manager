@@ -3,14 +3,14 @@
 URLs for Product list app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 from .views import ProductListView, ExportCsvView
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         ProductListView.as_view(),
         name='product-list'),
-    url(r'^export_csv$',
+    re_path(r'^export_csv$',
         ExportCsvView.as_view(),
         name='export-csv-product'),
 

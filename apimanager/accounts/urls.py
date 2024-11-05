@@ -3,11 +3,11 @@
 URLs for Account app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 from .views import IndexAccountsView
 
 urlpatterns = [
-    url(r'^create',
+    re_path(r'^create',
         IndexAccountsView.as_view(),
         name='accounts-create'),
 

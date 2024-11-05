@@ -8,9 +8,9 @@ from django.conf import settings
 from datetime import date
 from django.forms.widgets import SelectMultiple, CheckboxInput, CheckboxSelectMultiple
 from datetime import datetime, timedelta
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from bootstrap_datepicker_plus import DateTimePickerInput
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from apimanager.settings import API_DATE_FORMAT_WITH_DAY_DATE_TIME
 
 API_DATE_FORMAT_WITH_MILLISECONDS_PLACEHOLDER = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

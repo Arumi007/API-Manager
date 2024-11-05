@@ -3,7 +3,7 @@
 URLs for OBP app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from .views import (
     OAuthInitiateView, OAuthAuthorizeView,
@@ -14,14 +14,14 @@ from .views import (
 
 
 urlpatterns = [
-    url(r'^oauth/initiate$',
+    re_path(r'^oauth/initiate$',
         OAuthInitiateView.as_view(), name='oauth-initiate'),
-    url(r'^oauth/authorize$',
+    re_path(r'^oauth/authorize$',
         OAuthAuthorizeView.as_view(), name='oauth-authorize'),
-    url(r'^directlogin$',
+    re_path(r'^directlogin$',
         DirectLoginView.as_view(), name='directlogin'),
-    url(r'^gatewaylogin$',
+    re_path(r'^gatewaylogin$',
         GatewayLoginView.as_view(), name='gatewaylogin'),
-    url(r'^logout$',
+    re_path(r'^logout$',
         LogoutView.as_view(), name='oauth-logout'),
 ]

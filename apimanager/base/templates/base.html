@@ -43,9 +43,9 @@
                             <ul class="dropdown-menu">
                                 <li {% if users_index_url in request.path %} class="active" {% endif %}><a href="{{ users_index_url }}">{% trans "All" %}</a></li>
                                 <hr class="dropdown-hr">
-                                <li {% ifequal request.path url_users_detail %} class="active" {% endifequal %}><a href="{{ url_users_detail }}">{% trans "My User" %}</a></li>
+                                <li {% if request.path == url_users_detail %} class="active" {% endif %}><a href="{{ url_users_detail }}">{% trans "My User" %}</a></li>
                                 <hr class="dropdown-hr">
-                                <li {% ifequal request.path my_user_invitation %} class="active" {% endifequal %}><a href="{{ my_user_invitation }}">{% trans "Invite User" %}</a></li>
+                                <li {% if request.path == my_user_invitation %} class="active" {% endif %}><a href="{{ my_user_invitation }}">{% trans "Invite User" %}</a></li>
                             </ul>
                         </li>
                         {% url "api-metrics" as api_metrics_url %} {% url "connector-metrics" as connector_metrics_url %} {% url "weekly-summary" as metrics_summary_url %}
@@ -123,7 +123,7 @@
     {% if messages %}
     <div class="container messages">
         {% for message in messages %}
-        <div class="alert alert-dismissible{% ifequal message.tags "error" %} alert-danger{% else %}{% ifequal message.tags "debug" %} alert-info{% else %} alert-{{ message.tags }}{% endifequal %}{% endifequal %}" role="alert">
+        <div class="alert alert-dismissible{% if message.tags == "error" %} alert-danger{% else %}{% if message.tags == "debug" %} alert-info{% else %} alert-{{ message.tags }}{% endif %}{% endif %}" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
 					aria-hidden="true">&times;</span></button>
         {{ message }}

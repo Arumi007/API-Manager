@@ -3,16 +3,16 @@
 URLs for config app
 """
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from methodrouting.views import IndexView, methodrouting_save, methodrouting_delete
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         IndexView.as_view(),
         name='methodrouting-index'),
-    url(r'save/method', methodrouting_save,
+    re_path(r'save/method', methodrouting_save,
         name='methodrouting-save'),
-    url(r'delete/method', methodrouting_delete,
+    re_path(r'delete/method', methodrouting_delete,
         name='methodrouting-delete'),
 ]
